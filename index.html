@@ -7,7 +7,9 @@
 
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -16,11 +18,8 @@
     <div class="wrapper">
       <header>
         <h1>Connect to the Natural World</h1>
-        <p>A simple method for connecting plants to the web utilizing Arduino, Processing and Google Docs.  </p>
-
+        <p>How to connect plants to the web using Arduino, Processing and Google Docs.  </p>
         <p class="view"><a href="https://github.com/mganucheau/Connect-to-the-Natural-World">View the Project on GitHub <small>mganucheau/Connect-to-the-Natural-World</small></a></p>
-
-
         <ul>
           <li><a href="https://github.com/mganucheau/Connect-to-the-Natural-World/zipball/master">Download <strong>ZIP File</strong></a></li>
           <li><a href="https://github.com/mganucheau/Connect-to-the-Natural-World/tarball/master">Download <strong>TAR Ball</strong></a></li>
@@ -28,25 +27,26 @@
         </ul>
       </header>
       <section>
-        <p>I have always been frustrated with the technical and time requirements needed to view physical sensor data on the web. Services like Xively, ThingSpeak and Nimbits provide excellent features they all require some prerequisite knowledge of enough web technologies that may come across as intimidating, especially to those who may be new to programing. While searching for a simpler method to teach to youth, I came across some wonderful examples on journal.code4lib.org and Instructables on how to utilize Google Docs as an easier solution. </p>
+        <p>I have always been frustrated with the technical and time requirements needed to view physical sensor data on the web. Services like <a href="https://xively.com/">Xively</a>, <a href="https://www.thingspeak.com/">ThingSpeak</a> and <a href="http://www.nimbits.com/">Nimbits</a> provide excellent features they all require some prerequisite knowledge of enough web technologies that may come across as intimidating, especially to those who may be new to programing. While searching for a simpler method to teach to youth, I came across some wonderful examples on <a href="http://journal.code4lib.org/articles/8200">journal.code4lib.org</a> and <a href="http://www.instructables.com/id/How-to-use-Google-docs-for-data-logging/">Instructables</a> on how to utilize Google Docs as an easier solution. </p>
 
-<h4>
-<a name="hardware--software-needed" class="anchor" href="#hardware--software-needed"><span class="octicon octicon-link"></span></a>Hardware &amp; Software Needed</h4>
-
-<ul>
-<li>Hardware used in this tutorial:</li>
-<li>Temperature and Humidity Sensor (Grove)</li>
-<li>Moisture Sensor (Grove)</li>
-<li>Arduino Uno</li>
-<li>Breadboard</li>
-</ul><h4>
-<a name="software-used-in-this-tutorial" class="anchor" href="#software-used-in-this-tutorial"><span class="octicon octicon-link"></span></a>Software used in this tutorial:</h4>
+<h5>
+<a name="hardware-used-in-this-tutorial" class="anchor" href="#hardware-used-in-this-tutorial"><span class="octicon octicon-link"></span></a>Hardware used in this tutorial:</h5>
 
 <ul>
-<li>Arduino</li>
-<li>Humidity Temperature Sensor - Arduino Library(How to install a library for Arduino)</li>
-<li>Processing</li>
-<li>HTTProcessing - Processing Library  (How to install a library for Processing)</li>
+<li><a href="http://www.seeedstudio.com/wiki/Grove-_Temperature_and_Humidity_Sensor">Temperature and Humidity Sensor (Grove)</a></li>
+<li><a href="http://seeedstudio.com/wiki/Grove_-_Moisture_Sensor">Moisture Sensor (Grove)</a></li>
+<li><a href="http://arduino.cc/en/Main/arduinoBoardUno">Arduino Uno</a></li>
+<li><a href="https://learn.sparkfun.com/tutorials/how-to-use-a-breadboard">Breadboard</a></li>
+</ul><h5>
+<a name="software-used-in-this-tutorial" class="anchor" href="#software-used-in-this-tutorial"><span class="octicon octicon-link"></span></a>Software used in this tutorial:</h5>
+
+<ul>
+<li><a href="http://arduino.cc/en/main/software">Arduino</a></li>
+<li>
+<a href="https://github.com/Seeed-Studio/Grove_Temperature_And_Humidity_Sensor">Humidity Temperature Sensor</a> - Arduino Library(<a href="http://arduino.cc/en/Guide/Libraries">How to install a library for Arduino</a>)</li>
+<li><a href="http://processing.org/">Processing</a></li>
+<li>
+<a href="https://github.com/runemadsen/HTTProcessing">HTTProcessing</a> - Processing Library  (<a href="http://wiki.processing.org/w/How_to_Install_a_Contributed_Library">How to install a library for Processing</a>)</li>
 </ul><h3>
 <a name="1-arduino" class="anchor" href="#1-arduino"><span class="octicon octicon-link"></span></a>1. Arduino</h3>
 
@@ -107,12 +107,12 @@ Select to publish the chart and copy the code that is given to you.</p>
 
 <p>I designed this tutorial to give a brief overview of multiple software and hardware components.  With that said, this process can be streamlined with devices such as an arduino wifi shield, raspberry pi and the electric imp just to name a few.  I recently had the most amazing time being able to facilitate a workshop session around this tutorial at the 2013 MozFest with fantastic results.  </p>
       </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/mganucheau">mganucheau</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
     </div>
-    <script src="javascripts/scale.fix.js"></script>
+    <footer>
+      <p>Project maintained by <a href="https://github.com/mganucheau">mganucheau</a></p>
+      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+    </footer>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
     
   </body>
 </html>
