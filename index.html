@@ -1,33 +1,36 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
+
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Connect to the Natural World by mganucheau</title>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Connect to the Natural World : How to connect plants to the web using Arduino, Processing and Google Docs.  " />
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Connect to the Natural World</title>
   </head>
+
   <body>
-    <div class="wrapper">
-      <header>
-        <h1>Connect to the Natural World</h1>
-        <p>How to connect plants to the web using Arduino, Processing and Google Docs.  </p>
 
-        <p class="view"><a href="https://github.com/mganucheau/Connect-to-the-Natural-World">View the Project on GitHub <small>mganucheau/Connect-to-the-Natural-World</small></a></p>
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/mganucheau/Connect-to-the-Natural-World">View on GitHub</a>
 
+          <h1 id="project_title">Connect to the Natural World</h1>
+          <h2 id="project_tagline">How to connect plants to the web using Arduino, Processing and Google Docs.  </h2>
 
-        <ul>
-          <li><a href="https://github.com/mganucheau/Connect-to-the-Natural-World/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/mganucheau/Connect-to-the-Natural-World/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/mganucheau/Connect-to-the-Natural-World">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/mganucheau/Connect-to-the-Natural-World/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/mganucheau/Connect-to-the-Natural-World/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
         <p>I have always been frustrated with the technical and time requirements needed to view physical sensor data on the web. Services like <a href="https://xively.com/">Xively</a>, <a href="https://www.thingspeak.com/">ThingSpeak</a> and <a href="http://www.nimbits.com/">Nimbits</a> provide excellent features they all require some prerequisite knowledge of enough web technologies that may come across as intimidating, especially to those who may be new to programing. While searching for a simpler method to teach to youth, I came across some wonderful examples on <a href="http://journal.code4lib.org/articles/8200">journal.code4lib.org</a> and <a href="http://www.instructables.com/id/How-to-use-Google-docs-for-data-logging/">Instructables</a> on how to utilize Google Docs as an easier solution. </p>
 
 <h5>
@@ -48,27 +51,26 @@
 <li><a href="http://processing.org/">Processing</a></li>
 <li>
 <a href="https://github.com/runemadsen/HTTProcessing">HTTProcessing</a> - Processing Library  (<a href="http://wiki.processing.org/w/How_to_Install_a_Contributed_Library">How to install a library for Processing</a>)</li>
-</ul><hr><h3>
+</ul><h3>
 <a name="1-arduino" class="anchor" href="#1-arduino"><span class="octicon octicon-link"></span></a>1. Arduino</h3>
 
 <ul>
 <li><p>Setup your sensors by assembling the breadboard as the image shown here: 
-[image] 
-note: we are only using the power and ground rails on the breadboard</p></li>
+<img src="https://github.com/mganucheau/Connect-to-the-Natural-World/blob/gh-pages/images/breadboard.jpg" alt="breadboard">note: we are only using the power and ground rails on the breadboard</p></li>
 <li><p>Open and Run Plant_Sensors.ino
 You should now see 3 variables streaming at the bottom of your serial window.</p></li>
 </ul><p>Here are the value ranges for each sensor:</p>
 
 <ul>
-<li>Humidity range    = 20% - 90% RH</li>
-<li>Temperature range     = 0 - 50 C</li>
-<li>Moisture range    = 0 - 950</li>
+<li>Humidity range = 20% - 90% RH</li>
+<li>Temperature range = 0 - 50 C</li>
+<li>Moisture range = 0 - 950</li>
 </ul><h3>
 <a name="2-google-forms" class="anchor" href="#2-google-forms"><span class="octicon octicon-link"></span></a>2. Google Forms</h3>
 
 <ul>
 <li><p>Create a Google Form with 3 text inputs labeled:  Humidity, Temperature and Moisture
-[image]</p></li>
+<img src="https://github.com/mganucheau/Connect-to-the-Natural-World/blob/gh-pages/images/googleform.jpg" alt="googleform"></p></li>
 <li><p>While Viewing the Form, copy the url key located here and save it for later, we will need it: 
 [image]</p></li>
 <li><p>Copy the id for each input field.  To do this you will need t</p></li>
@@ -76,21 +78,18 @@ You should now see 3 variables streaming at the bottom of your serial window.</p
 <a name="3-processing" class="anchor" href="#3-processing"><span class="octicon octicon-link"></span></a>3. Processing</h3>
 
 <ul>
-<li>Open and run Sensors_Test. Check for the streaming variables to make that the data you are receiving from the Arduino is correct.</li>
-</ul><p>[image]</p>
-
-<ul>
-<li>Open Sensors2gDocs.pde and replace the XXXX with the information recorded in your google form</li>
-<li>Run Sensors2gDocs.pde and open your google docs…..</li>
+<li><p>Open and run Sensors_Test. Check for the streaming variables to make that the data you are receiving from the Arduino is correct.
+[image]</p></li>
+<li><p>Open Sensors2gDocs. pad and replace the XXXX with the information recorded in your google form</p></li>
+<li><p>Run Sensors2gDocs.pde and open your google docs…..</p></li>
 </ul><h3>
 <a name="4-visualize-it" class="anchor" href="#4-visualize-it"><span class="octicon octicon-link"></span></a>4. Visualize it</h3>
 
-<p>Simple
-Use the following formulas to find the last entry in column and add them to the side of your spreadsheet.
-=INDEX( A:A ; ROWS( A:A ) )
-=INDEX( B:B ; ROWS( B:B ) )
-=INDEX( C:C ; ROWS( C:C ) )
-=INDEX( D:D ; ROWS( D:D ) )
+<p>Use the following formulas to find the last entry in column and add them to the side of your spreadsheet.
+    =INDEX( A:A ; ROWS( A:A ) )
+    =INDEX( B:B ; ROWS( B:B ) )
+    =INDEX( C:C ; ROWS( C:C ) )
+    =INDEX( D:D ; ROWS( D:D ) )
 [image]</p>
 
 <p>Now, highlight the Humidity, Temperature and Moisture variables  and Insert a Gauge Chart.
@@ -102,12 +101,17 @@ Select to publish the chart and copy the code that is given to you.</p>
 
 <p>I designed this tutorial to give a brief overview of multiple software and hardware components.  With that said, this process can be streamlined with devices such as an Arduino wifi shield, raspberry pi and the electric imp just to name a few.  I recently had the most amazing time being able to facilitate a workshop session around this tutorial at the 2013 MozFest with fantastic results.  </p>
       </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/mganucheau">mganucheau</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Connect to the Natural World maintained by <a href="https://github.com/mganucheau">mganucheau</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
       </footer>
     </div>
-    <script src="javascripts/scale.fix.js"></script>
+
     
+
   </body>
 </html>
