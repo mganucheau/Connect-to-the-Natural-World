@@ -28,37 +28,84 @@
         </ul>
       </header>
       <section>
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+        <p>I have always been frustrated with the technical and time requirements needed to view physical sensor data on the web. Services like Xively, ThingSpeak and Nimbits provide excellent features they all require some prerequisite knowledge of enough web technologies that may come across as intimidating, especially to those who may be new to programing. While searching for a simpler method to teach to youth, I came across some wonderful examples on journal.code4lib.org and Instructables on how to utilize Google Docs as an easier solution. </p>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+<h4>
+<a name="hardware--software-needed" class="anchor" href="#hardware--software-needed"><span class="octicon octicon-link"></span></a>Hardware &amp; Software Needed</h4>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+<ul>
+<li>Hardware used in this tutorial:</li>
+<li>Temperature and Humidity Sensor (Grove)</li>
+<li>Moisture Sensor (Grove)</li>
+<li>Arduino Uno</li>
+<li>Breadboard</li>
+</ul><h4>
+<a name="software-used-in-this-tutorial" class="anchor" href="#software-used-in-this-tutorial"><span class="octicon octicon-link"></span></a>Software used in this tutorial:</h4>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+<ul>
+<li>Arduino</li>
+<li>Humidity Temperature Sensor - Arduino Library(How to install a library for Arduino)</li>
+<li>Processing</li>
+<li>HTTProcessing - Processing Library  (How to install a library for Processing)</li>
+</ul><h3>
+<a name="1-arduino" class="anchor" href="#1-arduino"><span class="octicon octicon-link"></span></a>1. Arduino</h3>
+
+<p>Setup your sensors by assembling the breadboard as the image shown here: 
+[image] </p>
+
+<p>*note: we are only using the power and ground rails on the breadboard</p>
+
+<p>Open and Run Plant_Sensors.ino</p>
+
+<p>You should now see 3 variables streaming at the bottom of your serial window.</p>
+
+<p>note: from the wiki</p>
+
+<ul>
+<li>Humidity range    = 20% - 90% RH</li>
+<li>Temperature range     = 0 - 50 C</li>
+<li>Moisture range    = 0 - 950</li>
+</ul><h3>
+<a name="2-google-forms" class="anchor" href="#2-google-forms"><span class="octicon octicon-link"></span></a>2. Google Forms</h3>
+
+<p>Create a Google Form with 3 text inputs labeled:  Humidity, Temperature and Moisture
+[image]
+While Viewing the Form, copy the url key located here and save it for later, we will need it: 
+[image]
+Copy the id for each input field.  To do this you will need t</p>
 
 <h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+<a name="3-processing" class="anchor" href="#3-processing"><span class="octicon octicon-link"></span></a>3. Processing</h3>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+<p>Open and run Sensors_Test.  Check for the streaming variables to make that the data you are receiving from the arduino is correct.
+[image]
+Open Sensors2gDocs.pde and replace the XXXX with the information recorded for your google form
+Run Sensors2gDocs.pde and open your google docs…..</p>
 
 <h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+<a name="4-visualize-it" class="anchor" href="#4-visualize-it"><span class="octicon octicon-link"></span></a>4. Visualize it</h3>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+<p>Simple
+Use the following formulas to find the last entry in column and add them to the side of your spreadsheet.</p>
 
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+<ul>
+<li>=INDEX( A:A ; ROWS( A:A ) )</li>
+<li>=INDEX( B:B ; ROWS( B:B ) )</li>
+<li>=INDEX( C:C ; ROWS( C:C ) )</li>
+<li>=INDEX( D:D ; ROWS( D:D ) )
+[image]</li>
+</ul><p>Now, highlight the Humidity, Temperature and Moisture variables  and Insert a Gauge Chart.
+Select to publish the chart and copy the code that is given to you.</p>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+<p>To test this I use Mozilla’s thimble to create a simple website shown here: [link]</p>
+
+<p>The downside to this method is that the gauge chart will only update when the page is reloaded.  To have the gauge automatically refresh we will need to call use some custom javascript to construct how we populate the gauge.</p>
+
+<p>Advance</p>
+
+<p>Thimble Template to use: <a href="https://thimble.webmaker.org/project/10274/remix">https://thimble.webmaker.org/project/10274/remix</a></p>
+
+<p>I designed this tutorial to give a brief overview of multiple software and hardware components.  With that said, this process can be streamlined with devices such as an arduino wifi shield, raspberry pi and the electric imp just to name a few.  I recently had the most amazing time being able to facilitate a workshop session around this tutorial at the 2013 MozFest with fantastic results.  </p>
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/mganucheau">mganucheau</a></p>
