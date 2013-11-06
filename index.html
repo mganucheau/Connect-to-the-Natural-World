@@ -33,27 +33,36 @@
 
 <p>I have always been frustrated with the technical and time requirements needed to view physical sensor data on the web. Services like <a href="https://xively.com/">Xively</a>, <a href="https://www.thingspeak.com/">ThingSpeak</a> and <a href="http://www.nimbits.com/">Nimbits</a> provide excellent features but they all require enough prerequisite knowledge of certain web technologies that may come across as intimidating, especially to those who may be new to programing. While searching for a simpler method to teach to youth, I came across some wonderful examples on <a href="http://journal.code4lib.org/articles/8200">journal.code4lib.org</a> and <a href="http://www.instructables.com/id/How-to-use-Google-docs-for-data-logging/">Instructables</a> on how to utilize Google Docs as an easier solution. </p>
 
-<h5>
-<a name="hardware-used-in-this-tutorial" class="anchor" href="#hardware-used-in-this-tutorial"><span class="octicon octicon-link"></span></a>Hardware used in this tutorial:</h5>
+<p><strong>Hardware used in this tutorial:</strong>  </p>
 
 <ul>
-<li><a href="http://www.seeedstudio.com/wiki/Grove-_Temperature_and_Humidity_Sensor">Temperature and Humidity Sensor (Grove)</a></li>
-<li><a href="http://seeedstudio.com/wiki/Grove_-_Moisture_Sensor">Moisture Sensor (Grove)</a></li>
-<li><a href="http://arduino.cc/en/Main/arduinoBoardUno">Arduino Uno</a></li>
-<li><a href="https://learn.sparkfun.com/tutorials/how-to-use-a-breadboard">Breadboard</a></li>
-</ul><h5>
-<a name="software-used-in-this-tutorial" class="anchor" href="#software-used-in-this-tutorial"><span class="octicon octicon-link"></span></a>Software used in this tutorial:</h5>
-
-<ul>
-<li><a href="http://arduino.cc/en/main/software">Arduino</a></li>
 <li>
-<a href="https://github.com/Seeed-Studio/Grove_Temperature_And_Humidity_Sensor">Humidity Temperature Sensor</a> - Arduino Library<br> 
-&gt;&gt;    <a href="http://arduino.cc/en/Guide/Libraries">How to install a library for Arduino</a>
+<a href="http://www.seeedstudio.com/wiki/Grove-_Temperature_and_Humidity_Sensor">Temperature and Humidity Sensor (Grove)</a><br>
 </li>
-<li><a href="http://processing.org/">Processing</a></li>
+<li>
+<a href="http://seeedstudio.com/wiki/Grove_-_Moisture_Sensor">Moisture Sensor (Grove)</a><br>
+</li>
+<li>
+<a href="http://arduino.cc/en/Main/arduinoBoardUno">Arduino Uno</a><br>
+</li>
+<li><a href="https://learn.sparkfun.com/tutorials/how-to-use-a-breadboard">Breadboard</a></li>
+</ul><p><strong>Software used in this tutorial:</strong>  </p>
+
+<ul>
+<li>
+<a href="http://arduino.cc/en/main/software">Arduino</a><br>
+</li>
+<li>
+<a href="https://github.com/Seeed-Studio/Grove_Temperature_And_Humidity_Sensor">Humidity Temperature Sensor</a> - Arduino Library<br><a href="http://arduino.cc/en/Guide/Libraries">How to install a library for Arduino</a><br>
+</li>
+<li>
+<a href="http://processing.org/">Processing</a><br>
+</li>
 <li>
 <a href="https://github.com/runemadsen/HTTProcessing">HTTProcessing</a> - Processing Library<br>
-++   <a href="http://wiki.processing.org/w/How_to_Install_a_Contributed_Library">How to install a library for Processing</a>
+</li>
+<li>
+<a href="http://wiki.processing.org/w/How_to_Install_a_Contributed_Library">How to install a library for Processing</a><br>
 </li>
 </ul><hr><h3>
 <a name="1-arduino" class="anchor" href="#1-arduino"><span class="octicon octicon-link"></span></a>1. Arduino</h3>
@@ -64,9 +73,13 @@
 </ul><p><img src="https://raw.github.com/mganucheau/Connect-to-the-Natural-World/gh-pages/images/breadboard.jpg" alt="breadboard"></p>
 
 <ul>
-<li><p>Open and run Plant_Sensors.ino
-You should now see 3 variables streaming at the bottom of your serial window.</p></li>
-<li><p>According to the manufacturer's wiki here are the value ranges for each sensor:<br></p></li>
+<li>Open and run <a href="https://github.com/mganucheau/Connect-to-the-Natural-World/blob/gh-pages/*Arduino/Plant_Sensors/Plant_Sensors.ino">Plant_Sensors.ino</a>.<br>
+You should now see 3 variables streaming at the bottom of your serial window.</li>
+</ul><p><img src="https://github.com/mganucheau/Connect-to-the-Natural-World/blob/gh-pages/images/serialviewsmall.jpg?raw=true" alt="serialview"></p>
+
+<ul>
+<li>According to the manufacturer's wiki here are the value ranges for each sensor:<br>
+</li>
 </ul><table>
 <thead><tr>
 <th>Sensor</th>
@@ -75,7 +88,7 @@ You should now see 3 variables streaming at the bottom of your serial window.</p
 <tbody>
 <tr>
 <td>Humidity</td>
-<td>20% - 90%</td>
+<td>20% - 90% (<a href="http://en.wikipedia.org/wiki/Relative_humidity">RH</a>)</td>
 </tr>
 <tr>
 <td>Temperature</td>
@@ -90,34 +103,44 @@ You should now see 3 variables streaming at the bottom of your serial window.</p
 <a name="2-google-forms" class="anchor" href="#2-google-forms"><span class="octicon octicon-link"></span></a>2. Google Forms</h3>
 
 <ul>
-<li>Create a Google Form with 3 text inputs labeled:  Humidity, Temperature and Moisture<br>
-</li>
+<li>Create a Google Form with 3 text inputs labeled:<br>
+Humidity, Temperature and Moisture</li>
 </ul><p><img src="https://raw.github.com/mganucheau/Connect-to-the-Natural-World/gh-pages/images/googleform.jpg" alt="googleform"></p>
 
 <ul>
-<li><p>While Viewing the Form, copy the url key located here and save it for later, we will need it: </p></li>
-<li><p>Copy the id for each input field</p></li>
-</ul><h3>
+<li>While Viewing the Form, copy the url key located here and save it for later, we will need it: </li>
+</ul><p><img src="https://raw.github.com/mganucheau/Connect-to-the-Natural-World/gh-pages/images/formkey.jpg" alt="googleform"></p>
+
+<ul>
+<li>Next, save the entry id that is generated for each field by control clicking on the field and selecting Inspect Element (note: this method may vary depending on your browser).  Here you can find the entry ID as the string of numbers following <strong>#entry_</strong> .<br>
+</li>
+</ul><p><img src="https://raw.github.com/mganucheau/Connect-to-the-Natural-World/gh-pages/images/entryid.jpg" alt="entryid"></p>
+
+<h3>
 <a name="3-processing" class="anchor" href="#3-processing"><span class="octicon octicon-link"></span></a>3. Processing</h3>
 
 <ul>
-<li><p>Open and run Sensors_Test. Check for the streaming variables to make that the data you are receiving from the Arduino is correct.
-[image]</p></li>
-<li><p>Open Sensors2gDocs.pde, replace the XXXX with the information recorded in your google form and run the script</p></li>
+<li>Open and run <a href="https://github.com/mganucheau/Connect-to-the-Natural-World/blob/gh-pages/*Processing/Sensors_Test/Sensors_Test.pde">Sensors_Test.pde</a>, then check for the streaming variables to make that the data you are receiving from the Arduino is correct. Depending on your setup, you may need to change your serial input called by changing the variable in the line <strong>Serial.list()[1]</strong> to the appropriate number.  For more info on this visit: here</li>
+</ul><p><img src="https://raw.github.com/mganucheau/Connect-to-the-Natural-World/gh-pages/images/procesingtest.jpg" alt="processingtest"></p>
+
+<ul>
+<li>Open Sensors2gDocs.pde, replace the XXXX with the information recorded in your google form and run the script</li>
 </ul><h3>
 <a name="4-visualize-it" class="anchor" href="#4-visualize-it"><span class="octicon octicon-link"></span></a>4. Visualize it</h3>
 
-<p>Use the following formulas to find the last entry in column and add them to the side of your spreadsheet.</p>
-
-<blockquote>
-<p>=INDEX( A:A ; ROWS( A:A ) )<br>
+<ul>
+<li>Use the following formulas to find the last entry in column and add them to the side of your spreadsheet.<br>
+</li>
+</ul><p>=INDEX( A:A ; ROWS( A:A ) )<br>
 =INDEX( B:B ; ROWS( B:B ) )<br>
 =INDEX( C:C ; ROWS( C:C ) )<br>
-=INDEX( D:D ; ROWS( D:D ) )<br></p>
-</blockquote>
+=INDEX( D:D ; ROWS( D:D ) )<br><img src="https://raw.github.com/mganucheau/Connect-to-the-Natural-World/gh-pages/images/spreadsheetformula.jpg" alt="spreadsheetformula"></p>
 
-<p>With the Humidity, Temperature and Moisture variables highlighted insert a Gauge Chart.
-Select to publish the chart and copy the code that is given to you.</p>
+<ul>
+<li>With the Humidity, Temperature and Moisture variables highlighted insert a Gauge Chart.</li>
+</ul><p><img src="https://raw.github.com/mganucheau/Connect-to-the-Natural-World/gh-pages/images/gauge.jpg" alt="gauge"></p>
+
+<p>Select to publish the chart and copy the code that is given to you.</p>
 
 <hr><p>The downside to this method is that the gauge chart will only update when the page is reloaded.  To have the gauge automatically refreshes we will need to call use some custom javascript to construct how we populate the gauge.</p>
 
