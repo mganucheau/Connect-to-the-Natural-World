@@ -29,9 +29,11 @@
       </header>
       <section>
         <h3>
-<a name="a-tutorial-on-connecting-plants-to-the-web-using-arduino-processing-and-google-docs" class="anchor" href="#a-tutorial-on-connecting-plants-to-the-web-using-arduino-processing-and-google-docs"><span class="octicon octicon-link"></span></a>A tutorial on connecting plants to the web using Arduino, Processing and Google Docs.</h3>
+<a name="how-to-connect-plants-to-the-web-using-arduino-processing-and-google-docs" class="anchor" href="#how-to-connect-plants-to-the-web-using-arduino-processing-and-google-docs"><span class="octicon octicon-link"></span></a>How to connect plants to the web using Arduino, Processing and Google Docs.</h3>
 
-<p>I have always been frustrated with the technical and time requirements needed to view physical sensor data on the web. Services like <a href="https://xively.com/">Xively</a>, <a href="https://www.thingspeak.com/">ThingSpeak</a> and <a href="http://www.nimbits.com/">Nimbits</a> provide excellent features but they all require enough prerequisite knowledge of certain web technologies that may come across as intimidating, especially to those who may be new to programing. While searching for a simpler method to teach to youth, I came across some wonderful examples on <a href="http://journal.code4lib.org/articles/8200">journal.code4lib.org</a> and <a href="http://www.instructables.com/id/How-to-use-Google-docs-for-data-logging/">Instructables</a> on how to utilize Google Docs as an easier solution. </p>
+<p>I have always been frustrated with the technical and time requirements needed to view physical sensor data on the web. Services like <a href="https://xively.com/">Xively</a>, <a href="https://www.thingspeak.com/">ThingSpeak</a> and <a href="http://www.nimbits.com/">Nimbits</a> provide excellent features but they all require enough prerequisite knowledge of certain web technologies that may come across as intimidating, especially to those who may be new to programing. While searching for a simpler method to teach to youth, I came across some wonderful examples on <a href="http://journal.code4lib.org/articles/8200">journal.code4lib.org</a> and <a href="http://www.instructables.com/id/How-to-use-Google-docs-for-data-logging/">Instructables</a> on how to utilize Google Docs as an easier solution.</p>
+
+<p>I designed this tutorial to give a brief overview of multiple software and hardware components.  With that said, this process can be made even simpler with devices such as an <a href="http://arduino.cc/en/Main/ArduinoWiFiShield">Arduino Wifi Shield</a>, Raspberry Pi or an Electric Imp, just to name a few.</p>
 
 <p><strong>Hardware used in this tutorial:</strong>  </p>
 
@@ -53,16 +55,13 @@
 <a href="http://arduino.cc/en/main/software">Arduino</a><br>
 </li>
 <li>
-<a href="https://github.com/Seeed-Studio/Grove_Temperature_And_Humidity_Sensor">Humidity Temperature Sensor</a> - Arduino Library<br><a href="http://arduino.cc/en/Guide/Libraries">How to install a library for Arduino</a><br>
+<a href="https://github.com/Seeed-Studio/Grove_Temperature_And_Humidity_Sensor">Humidity Temperature Sensor</a> - Arduino Library <a href="http://arduino.cc/en/Guide/Libraries">(How to install)</a><br>
 </li>
 <li>
 <a href="http://processing.org/">Processing</a><br>
 </li>
 <li>
-<a href="https://github.com/runemadsen/HTTProcessing">HTTProcessing</a> - Processing Library<br>
-</li>
-<li>
-<a href="http://wiki.processing.org/w/How_to_Install_a_Contributed_Library">How to install a library for Processing</a><br>
+<a href="https://github.com/runemadsen/HTTProcessing">HTTProcessing</a> - Processing Library <a href="http://wiki.processing.org/w/How_to_Install_a_Contributed_Library">(How to Install)</a><br>
 </li>
 </ul><hr><h3>
 <a name="1-arduino" class="anchor" href="#1-arduino"><span class="octicon octicon-link"></span></a>1. Arduino</h3>
@@ -73,7 +72,7 @@
 </ul><p><img src="https://raw.github.com/mganucheau/Connect-to-the-Natural-World/gh-pages/images/breadboard.jpg" alt="breadboard"></p>
 
 <ul>
-<li>Open and run <a href="https://github.com/mganucheau/Connect-to-the-Natural-World/blob/gh-pages/*Arduino/Plant_Sensors/Plant_Sensors.ino">Plant_Sensors.ino</a>.<br>
+<li>Open and run <a href="https://github.com/mganucheau/Connect-to-the-Natural-World/blob/gh-pages/*Arduino/PlantSensors/PlantSensors.ino">PlantSensors.ino</a>.<br>
 You should now see 3 variables streaming at the bottom of your serial window.</li>
 </ul><p><img src="https://github.com/mganucheau/Connect-to-the-Natural-World/blob/gh-pages/images/serialviewsmall.jpg?raw=true" alt="serialview"></p>
 
@@ -120,31 +119,36 @@ Humidity, Temperature and Moisture</li>
 <a name="3-processing" class="anchor" href="#3-processing"><span class="octicon octicon-link"></span></a>3. Processing</h3>
 
 <ul>
-<li>Open and run <a href="https://github.com/mganucheau/Connect-to-the-Natural-World/blob/gh-pages/*Processing/Sensors_Test/Sensors_Test.pde">Sensors_Test.pde</a>, then check for the streaming variables to make that the data you are receiving from the Arduino is correct. Depending on your setup, you may need to change your serial input called by changing the variable in the line <strong>Serial.list()[1]</strong> to the appropriate number.  For more info on this visit: here</li>
+<li>Open and run <a href="https://github.com/mganucheau/Connect-to-the-Natural-World/blob/gh-pages/*Processing/SensorsTest/SensorsTest.pde">SensorsTest.pde</a>, then check for the streaming variables to make that the data you are receiving from the Arduino is correct. Depending on your setup, you may need to change your serial input called by changing the variable in the line <strong>Serial.list()[1]</strong> to the appropriate number.  For more info on this visit: here</li>
 </ul><p><img src="https://raw.github.com/mganucheau/Connect-to-the-Natural-World/gh-pages/images/procesingtest.jpg" alt="processingtest"></p>
 
 <ul>
-<li>Open Sensors2gDocs.pde, replace the XXXX with the information recorded in your google form and run the script</li>
-</ul><h3>
+<li>Next, open <a href="https://github.com/mganucheau/Connect-to-the-Natural-World/blob/gh-pages/*Processing/Sensors2gDocs/Sensors2gDocs.pde">Sensors2gDocs.pde</a> and, in the setup of your sketch, replace the <strong>XXXXXXXXXX</strong> with the information recorded in your google form. Now run the script.</li>
+</ul><p>String formURL = "<a href="https://docs.google.com/forms/d/**XXXXXXXXXX**/">https://docs.google.com/forms/d/**XXXXXXXXXX**/</a> formResponse";<br>
+String field1 = "entry.<strong>XXXXXXXXXX</strong>";<br>
+String field2 = "entry.<strong>XXXXXXXXXX</strong>";<br>
+String field3 = "entry.<strong>XXXXXXXXXX</strong>";   </p>
+
+<h3>
 <a name="4-visualize-it" class="anchor" href="#4-visualize-it"><span class="octicon octicon-link"></span></a>4. Visualize it</h3>
 
 <ul>
-<li>Use the following formulas to find the last entry in column and add them to the side of your spreadsheet.<br>
-</li>
-</ul><p>=INDEX( A:A ; ROWS( A:A ) )<br>
+<li><p>Use the following formulas to find the last entry in column and add them to the side of your spreadsheet.<br>
+=INDEX( A:A ; ROWS( A:A ) )<br>
 =INDEX( B:B ; ROWS( B:B ) )<br>
 =INDEX( C:C ; ROWS( C:C ) )<br>
-=INDEX( D:D ; ROWS( D:D ) )<br><img src="https://raw.github.com/mganucheau/Connect-to-the-Natural-World/gh-pages/images/spreadsheetformula.jpg" alt="spreadsheetformula"></p>
-
-<ul>
-<li>With the Humidity, Temperature and Moisture variables highlighted insert a Gauge Chart.</li>
+=INDEX( D:D ; ROWS( D:D ) )<br><img src="https://raw.github.com/mganucheau/Connect-to-the-Natural-World/gh-pages/images/spreadsheetformula.jpg" alt="spreadsheetformula"></p></li>
+<li><p>With the Humidity, Temperature and Moisture variables highlighted insert a <strong>Gauge Chart</strong>.</p></li>
 </ul><p><img src="https://raw.github.com/mganucheau/Connect-to-the-Natural-World/gh-pages/images/gauge.jpg" alt="gauge"></p>
 
-<p>Select to publish the chart and copy the code that is given to you.</p>
+<ul>
+<li>After you have inserted a gauge chart, toggle the menue option in the upper right and select to <strong>Publish Chart</strong> this will then give you the code needed to embed your gauges in another webpage.</li>
+</ul><p><img src="https://raw.github.com/mganucheau/Connect-to-the-Natural-World/gh-pages/images/publishgauge.jpg" alt="publishgauge"></p>
 
-<hr><p>The downside to this method is that the gauge chart will only update when the page is reloaded.  To have the gauge automatically refreshes we will need to call use some custom javascript to construct how we populate the gauge.</p>
+<hr><h3>
+<a name="final-thougths" class="anchor" href="#final-thougths"><span class="octicon octicon-link"></span></a>Final Thougths</h3>
 
-<p>I designed this tutorial to give a brief overview of multiple software and hardware components.  With that said, this process can be streamlined with devices such as an Arduino wifi shield, raspberry pi and the electric imp just to name a few.  I recently had the most amazing time being able to facilitate a workshop session around this tutorial at the 2013 MozFest with fantastic results.  </p>
+<p>This is a simple method that avoids setting up a database or scripting any custom code. The downside to this method is that the gauge chart will only update when the page is reloaded.  To have the gauge automatically refreshes we will need to call use some custom javascript to construct how we populate the gauge.  Stay tuned for a tutorial on how to do just that coming soon.</p>
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/mganucheau">mganucheau</a></p>
