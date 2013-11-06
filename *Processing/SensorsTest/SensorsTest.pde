@@ -1,3 +1,7 @@
+//  Code for the tutorial: 
+//  Connect to the Natural World - http://mganucheau.github.io/Connect-to-the-Natural-World/
+//  by Matt Ganucheau
+
 import processing.serial.*;
 
 Serial myPort;
