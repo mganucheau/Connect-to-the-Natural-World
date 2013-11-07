@@ -72,14 +72,10 @@
 </ul><p><img src="https://raw.github.com/mganucheau/Connect-to-the-Natural-World/gh-pages/images/breadboard.jpg" alt="breadboard"></p>
 
 <ul>
-<li>Open and run <a href="https://github.com/mganucheau/Connect-to-the-Natural-World/blob/gh-pages/*Arduino/PlantSensors/PlantSensors.ino">PlantSensors.ino</a>.<br>
-You should now see 3 variables streaming at the bottom of your serial window.</li>
+<li>Open and run <a href="https://github.com/mganucheau/Connect-to-the-Natural-World/blob/gh-pages/*Arduino/PlantSensors/PlantSensors.ino">PlantSensors.ino</a>. Now open your Serial Window and you 3 variables streaming.</li>
 </ul><p><img src="https://github.com/mganucheau/Connect-to-the-Natural-World/blob/gh-pages/images/serialviewsmall.jpg?raw=true" alt="serialview"></p>
 
-<ul>
-<li>According to the manufacturer's wiki here are the value ranges for each sensor:<br>
-</li>
-</ul><table>
+<table>
 <thead><tr>
 <th>Sensor</th>
 <th>Range</th>
@@ -120,23 +116,16 @@ Humidity, Temperature and Moisture</li>
 <a name="3-processing" class="anchor" href="#3-processing"><span class="octicon octicon-link"></span></a>3. Processing</h3>
 
 <ul>
-<li>Open and run <a href="https://github.com/mganucheau/Connect-to-the-Natural-World/blob/gh-pages/*Processing/SensorsTest/SensorsTest.pde">SensorsTest.pde</a>, then check for the streaming variables to make that the data you are receiving from the Arduino is correct. </li>
-</ul><p>Depending on your setup, you may need to change your serial input called by changing the variable in the line containing **Serial.list()[1] ** to your Arduino's appropriate number.  </p>
-
-<p><img src="https://raw.github.com/mganucheau/Connect-to-the-Natural-World/gh-pages/images/procesingtest.jpg" alt="processingtest"></p>
+<li>Open and run <a href="https://github.com/mganucheau/Connect-to-the-Natural-World/blob/gh-pages/*Processing/SensorsTest/SensorsTest.pde">SensorsTest.pde</a>, then check for the streaming variables to make that the data you are receiving from the Arduino is correct. Depending on your setup, you may need to change the serial port is being called by changing the variable called on <strong>line 22</strong>, in this case it is port <strong>1</strong>.  To help you find your appropriate port, all of your serial ports are printed on launch.</li>
+</ul><p><img src="https://raw.github.com/mganucheau/Connect-to-the-Natural-World/gh-pages/images/procesingtest.jpg" alt="processingtest"></p>
 
 <ul>
-<li>Next, open <a href="https://github.com/mganucheau/Connect-to-the-Natural-World/blob/gh-pages/*Processing/Sensors2gDocs/Sensors2gDocs.pde">Sensors2gDocs.pde</a> and, in the setup of your sketch, replace the <strong>XXXXXXXXXX</strong> with the information recorded in your google form. Now run the script.</li>
-</ul><p>String formURL = "<a href="https://docs.google.com/forms/d/**XXXXXXXXXX**/formResponse">https://docs.google.com/forms/d/**XXXXXXXXXX**/formResponse</a>";<br>
-String field1 = "entry.<strong>XXXXXXXXXX</strong>";<br>
-String field2 = "entry.<strong>XXXXXXXXXX</strong>";<br>
-String field3 = "entry.<strong>XXXXXXXXXX</strong>";   </p>
-
-<h3>
+<li>Next, open <a href="https://github.com/mganucheau/Connect-to-the-Natural-World/blob/gh-pages/*Processing/Sensors2gDocs/Sensors2gDocs.pde">Sensors2gDocs.pde</a> and, in the setup of your sketch, replace the <strong>XXXXXXXXXX</strong> in <strong>lines 8 - 11</strong>, with the information you recorded earlier from your google form. Now run the script and open your google form.</li>
+</ul><h3>
 <a name="4-visualize-it" class="anchor" href="#4-visualize-it"><span class="octicon octicon-link"></span></a>4. Visualize it</h3>
 
 <ul>
-<li>Use the following formulas to find the last entry in column and add them to the side of your spreadsheet.<br>
+<li>If all is working correctly you should be seeing the information being updated. Next stop the Arduino so we can work on this spreadsheet without it conflicting. On the side of your spreadsheet, use the following formulas to find the last entry in each column and label these accordingly.<br>
 </li>
 </ul><blockquote>
 <p>=INDEX( A:A ; ROWS( A:A ) )<br>
@@ -148,12 +137,12 @@ String field3 = "entry.<strong>XXXXXXXXXX</strong>";   </p>
 <p><img src="https://raw.github.com/mganucheau/Connect-to-the-Natural-World/gh-pages/images/spreadsheetformula.jpg" alt="spreadsheetformula"></p>
 
 <ul>
-<li>With the Humidity, Temperature and Moisture variables highlighted insert a <strong>Gauge Chart</strong>.<br>
+<li>With the variables for Humidity, Temperature and Moisture selected <strong>Insert</strong> a <strong>Gauge Chart</strong>.<br>
 </li>
 </ul><p><img src="https://raw.github.com/mganucheau/Connect-to-the-Natural-World/gh-pages/images/gauge.jpg" alt="gauge"></p>
 
 <ul>
-<li>After you have inserted a gauge chart, toggle the menu option in the upper right and select to <strong>Publish Chart</strong> this will then give you the code needed to embed your gauges in another webpage.<br>
+<li>After you have a gauge chart created, toggle the menu option in the upper right and select to <strong>Publish Chart</strong> this will then give you the code needed to embed your gauges in another webpage.<br>
 </li>
 </ul><p><img src="https://raw.github.com/mganucheau/Connect-to-the-Natural-World/gh-pages/images/publishgauge.jpg" alt="publishgauge"></p>
 
