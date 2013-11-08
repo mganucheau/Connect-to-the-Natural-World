@@ -16,7 +16,7 @@
     <div class="wrapper">
       <header>
         <h1>Connect to the Natural World</h1>
-        <p>How to connect plants to the web using Arduino, Processing and Google Docs</p>
+        <p></p>
 
         <p class="view"><a href="https://github.com/mganucheau/Connect-to-the-Natural-World">View the Project on GitHub <small>mganucheau/Connect-to-the-Natural-World</small></a></p>
 
@@ -28,12 +28,12 @@
         </ul>
       </header>
       <section>
-        <h3>
-<a name="how-to-connect-plants-to-the-web-using-arduino-processing-and-google-docs" class="anchor" href="#how-to-connect-plants-to-the-web-using-arduino-processing-and-google-docs"><span class="octicon octicon-link"></span></a>How to connect plants to the web using Arduino, Processing and Google Docs.</h3>
+        <h2>
+<a name="a-guide-to-plugging-plants-into-the-web-using-arduino-processing-and-google-docs" class="anchor" href="#a-guide-to-plugging-plants-into-the-web-using-arduino-processing-and-google-docs"><span class="octicon octicon-link"></span></a>A guide to plugging plants into the web using Arduino, Processing and Google Docs.</h2>
 
-<p>I have always been frustrated with the technical and time requirements needed to view physical sensor data on the web. Services like <a href="https://xively.com/">Xively</a>, <a href="https://www.thingspeak.com/">ThingSpeak</a> and <a href="http://www.nimbits.com/">Nimbits</a> all provide excellent features but they require enough prerequisite knowledge of certain web technologies that may come across as intimidating, especially to those who may be new to programing. While searching for a simpler method to teach to youth, I came across some wonderful examples on <a href="http://journal.code4lib.org/articles/8200">journal.code4lib.org</a> and <a href="http://www.instructables.com/id/How-to-use-Google-docs-for-data-logging/">Instructables</a> on how to utilize Google Docs as an easier solution.</p>
+<p>I've always been frustrated with the technical and time requirements needed to view physical sensor data on the web. Services like <a href="https://xively.com/">Xively</a>, <a href="https://www.thingspeak.com/">ThingSpeak</a> and <a href="http://www.nimbits.com/">Nimbits</a> all provide excellent features, but they also require enough prerequisite knowledge of specific web technologies to appear intimidating, especially to those new to programming. While searching for an easier method to employ in youth programs, I came across some wonderful examples on <a href="http://journal.code4lib.org/articles/8200">journal.code4lib.org</a> and <a href="http://www.instructables.com/id/How-to-use-Google-docs-for-data-logging/">Instructables</a> on how to use Google Docs as an simplified the process significantly.</p>
 
-<p>I designed this tutorial to give a brief overview of multiple software and hardware components. With that said, this process can be made even simpler with devices such as an <a href="http:%20//Arduino.%20cc/en/Main/ArduinoWiFiShield">Arduino Wifi Shield</a>, <a href="http://www.raspberrypi.org/">Raspberry Pi</a> or an <a href="http://electricimp.com/">Electric Imp</a>, just to name a few.</p>
+<p>This tutorial is designed to give a brief overview of facilitating multiple software and hardware components. With that said, this process can be streamlined even further with devices such as an <a href="http:%20//Arduino.cc/en/Main/ArduinoWiFiShield">Arduino Wifi Shield</a>, <a href="http://www.raspberrypi.org/">Raspberry Pi</a> or an <a href="http://electricimp.com/">Electric Imp</a>, to name just a few.</p>
 
 <p><strong>Hardware used in this tutorial:</strong>  </p>
 
@@ -72,7 +72,7 @@
 </ul><p><img src="https://raw.github.com/mganucheau/Connect-to-the-Natural-World/gh-pages/images/breadboard.jpg" alt="breadboard"></p>
 
 <ul>
-<li>Open and run <a href="https://github.com/mganucheau/Connect-to-the-Natural-World/blob/gh-pages/*Arduino/PlantSensors/PlantSensors.ino">PlantSensors.ino</a>. Now open your Serial Window and you 3 variables streaming.</li>
+<li>Open and run <a href="https://github.com/mganucheau/Connect-to-the-Natural-World/blob/gh-pages/*Arduino/PlantSensors/PlantSensors.ino">PlantSensors.ino</a>. Now open your Serial Window and you should see your 3 variables streaming.</li>
 </ul><p><img src="https://github.com/mganucheau/Connect-to-the-Natural-World/blob/gh-pages/images/serialviewsmall.jpg?raw=true" alt="serialview"></p>
 
 <table>
@@ -103,7 +103,7 @@ Humidity, Temperature and Moisture</li>
 </ul><p><img src="https://raw.github.com/mganucheau/Connect-to-the-Natural-World/gh-pages/images/googleform.jpg" alt="googleform"></p>
 
 <ul>
-<li>While Viewing the Form, copy the url key located here and save it for later, we will need it:<br>
+<li>While Viewing the Form, copy the form url key located here and save it for later, you will need it:<br>
 </li>
 </ul><p><img src="https://raw.github.com/mganucheau/Connect-to-the-Natural-World/gh-pages/images/formkey.jpg" alt="googleform"></p>
 
@@ -116,7 +116,7 @@ Humidity, Temperature and Moisture</li>
 <a name="3-processing" class="anchor" href="#3-processing"><span class="octicon octicon-link"></span></a>3. Processing</h3>
 
 <ul>
-<li>Open and run <a href="https://github.com/mganucheau/Connect-to-the-Natural-World/blob/gh-pages/*Processing/SensorsTest/SensorsTest.pde">SensorsTest.pde</a>, then check for the streaming variables to make that the data you are receiving from the Arduino is correct. Depending on your setup, you may need to change the serial port is being called by changing the variable called on <strong>line 22</strong>, in this case it is port <strong>1</strong>.  To help you find your appropriate port, all of your serial ports are printed on launch.</li>
+<li>Open and run <a href="https://github.com/mganucheau/Connect-to-the-Natural-World/blob/gh-pages/*Processing/SensorsTest/SensorsTest.pde">SensorsTest.pde</a>. Then check for the streaming variables to make sure that the data you are receiving from the Arduino is correct. Depending on your setup, you may need to change the serial port that is being called by changing the variable on <strong>line 22</strong> (in this case it is port <strong>1</strong>). To help you find your appropriate port, all of your serial ports are printed on launch.</li>
 </ul><p><img src="https://raw.github.com/mganucheau/Connect-to-the-Natural-World/gh-pages/images/procesingtest.jpg" alt="processingtest"></p>
 
 <ul>
@@ -125,7 +125,7 @@ Humidity, Temperature and Moisture</li>
 <a name="4-visualize-it" class="anchor" href="#4-visualize-it"><span class="octicon octicon-link"></span></a>4. Visualize it</h3>
 
 <ul>
-<li>If all is working correctly you should be seeing the information being updated. Next stop the Arduino so we can work on this spreadsheet without it conflicting. On the side of your spreadsheet, use the following formulas to find the last entry in each column and label these accordingly.<br>
+<li>If all is working correctly you should see the information being updated. Next stop the Arduino so we can work on this spreadsheet without it conflicting. On the side of your spreadsheet, use the following formulas to find the last entry in each column and label these accordingly.<br>
 </li>
 </ul><blockquote>
 <p>=INDEX( A:A ; ROWS( A:A ) )<br>
@@ -142,11 +142,11 @@ Humidity, Temperature and Moisture</li>
 </ul><p><img src="https://raw.github.com/mganucheau/Connect-to-the-Natural-World/gh-pages/images/gauge.jpg" alt="gauge"></p>
 
 <ul>
-<li>After you have a gauge chart created, toggle the menu option in the upper right and select to <strong>Publish Chart</strong> this will then give you the code needed to embed your gauges in another webpage.<br>
+<li>After you have a gauge chart created, toggle the menu option in the upper right and select <strong>Publish Chart</strong>. This will then give you the code needed to embed your gauges in another webpage.<br>
 </li>
 </ul><p><img src="https://raw.github.com/mganucheau/Connect-to-the-Natural-World/gh-pages/images/publishgauge.jpg" alt="publishgauge"></p>
 
-<p>Note: The downside to viewing the gauge in this method is that the gauge chart will only update when the page is reloaded. To have the gauge automatically refresh we will need to call use some javascript to construct how we populate the gauge.  Stay tuned for that tutorial to come.</p>
+<p>Note: The downside to viewing the gauge with this method is that the gauge chart will only update when the page is reloaded. To have the gauge automatically refresh we will need to use some javascript to define how we populate the gauge.  Stay tuned for that tutorial to come!</p>
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/mganucheau">mganucheau</a></p>
